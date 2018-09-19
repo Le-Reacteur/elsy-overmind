@@ -1,0 +1,229 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #424242;
+
+  background: #d38312; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #a83279, #d38312); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #a83279,
+    #d38312
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* root */
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Range input */
+
+input[type='range'].range {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0px 0;
+}
+input[type='range'].range:focus {
+  outline: none;
+}
+input[type='range'].range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  background: #f0f0f0;
+  border-radius: 20px;
+}
+input[type='range'].range::-webkit-slider-thumb {
+  /* box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.35), 0px 0px 0.5px rgba(13, 13, 13, 0.35); */
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #2196f3;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0px;
+}
+input[type='range'].range:focus::-webkit-slider-runnable-track {
+  background: #f5f5f5;
+}
+input[type='range'].range::-moz-range-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  background: #f0f0f0;
+  border-radius: 20px;
+  border: 0px solid #010101;
+}
+input[type='range'].range::-moz-range-thumb {
+  /* box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.35), 0px 0px 0.5px rgba(13, 13, 13, 0.35); */
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #2196f3;
+  cursor: pointer;
+}
+input[type='range'].range::-ms-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type='range'].range::-ms-fill-lower {
+  background: #ebebeb;
+  border-radius: 40px;
+}
+input[type='range'].range::-ms-fill-upper {
+  background: #f0f0f0;
+  border-radius: 40px;
+}
+input[type='range'].range::-ms-thumb {
+  /* box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.35), 0px 0px 0.5px rgba(13, 13, 13, 0.35); */
+  width: 20px;
+  border-radius: 20px;
+  background: #2196f3;
+  cursor: pointer;
+  height: 20px;
+}
+input[type='range'].range:focus::-ms-fill-lower {
+  background: #f0f0f0;
+}
+input[type='range'].range:focus::-ms-fill-upper {
+  background: #f5f5f5;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  display: flex;
+  align-content: stretch;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.splitter > hr {
+  border: none;
+  height: 2px;
+  background: #1e88e5;
+  margin: 20px 15px;
+  opacity: 0.2;
+}
+
+.title {
+  text-align: center;
+  font-weight: normal;
+}
+
+.title > span {
+  margin: 5px;
+}
+
+.title > span:nth-child(1) {
+  font-weight: 300;
+}
+.title > span:nth-child(2) {
+  font-weight: 500;
+}
+.title > span:nth-child(3) {
+  font-weight: 800;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.slider-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.slider-icon {
+  padding-right: 20px;
+}
+
+.slider-name {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.slider-value {
+  font-weight: 600;
+}
+
+.slider-range {
+  margin-bottom: 5px;
+}
+
+.glasses-container {
+  position: relative;
+  margin: 10px;
+}
+
+.glasses-overflow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.glasses-inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.water-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.water-text {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+}
+
+.water-value {
+  font-weight: 600;
+  width: 110px;
+  display: inline-block;
+}
