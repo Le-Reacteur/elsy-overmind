@@ -11,30 +11,6 @@ const setValueMutation = (state, { key, value }) => {
 
 const setValue = action => action().mutate(setValueMutation);
 
-const demo = action =>
-  action()
-    .map(effects => effects.api.getRandom())
-    .map((_, value) => Math.floor(value * 50))
-    .map((effects, value) => {
-      console.log(value);
-      return value * 2;
-    })
-    .mutate((state, value) => {
-      state.run = value;
-    });
-
-// effects
-
-const api = {
-  getRandom: () => {
-    return new Promise((resolve, reject) => {
-      window.setTimeout(() => {
-        resolve(Math.random());
-      }, 3000);
-    });
-  },
-};
-
 // Utils
 
 const toPercent = v => 0.5 + (v / 100) * 0.5;
@@ -53,10 +29,6 @@ export const app = new App(
     },
     actions: {
       setValue,
-      demo,
-    },
-    effects: {
-      api,
     },
   },
   {

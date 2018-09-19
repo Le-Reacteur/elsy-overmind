@@ -14,13 +14,6 @@ const App = ({ app }) => {
     <div className="container">
       <Card>
         <Title />
-        <button
-          onClick={() => {
-            app.actions.demo();
-          }}
-        >
-          Click
-        </button>
         <WaterRecomandation waterValue={app.state.water} />
         <CardSplitter />
         <Slider icon={<Run color="#F44336" />} name="Distance" unit="m" stateKey="run" />
