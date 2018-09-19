@@ -20,7 +20,7 @@ const App = ({ app }) => {
         <Slider icon={<Run color="#F44336" />} name="Distance" unit="m" stateKey="run" min={RUN_MIN} max={RUN_MAX} />
         <Slider
           icon={<Sun color="#FF9800" />}
-          name="Météo"
+          name="Temperature"
           unit="°C"
           stateKey="meteo"
           min={METEO_MIN}

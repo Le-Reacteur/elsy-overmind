@@ -8,7 +8,7 @@ const WaterRecomandation = ({ waterValue }) => {
     <div className="water-container">
       <WaterGlasses iconSize={50} waterValue={waterValue} />
       <p className="water-text">
-        Quantité d'eau recommandée: <span className="water-value">{waterRound + 'L'}</span>
+        Recommended amount of water: <span className="water-value">{waterRound + 'L'}</span>
       </p>
     </div>
   );

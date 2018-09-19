@@ -26,83 +26,6 @@ body {
   justify-content: center;
 }
 
-/* Range input */
-
-input[type='range'].range {
-  -webkit-appearance: none;
-  width: 100%;
-  margin: 0px 0;
-}
-input[type='range'].range:focus {
-  outline: none;
-}
-input[type='range'].range::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 20px;
-  cursor: pointer;
-  background: #f0f0f0;
-  border-radius: 20px;
-}
-input[type='range'].range::-webkit-slider-thumb {
-  /* box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.35), 0px 0px 0.5px rgba(13, 13, 13, 0.35); */
-  height: 20px;
-  width: 20px;
-  border-radius: 20px;
-  background: #2196f3;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: 0px;
-}
-input[type='range'].range:focus::-webkit-slider-runnable-track {
-  background: #f5f5f5;
-}
-input[type='range'].range::-moz-range-track {
-  width: 100%;
-  height: 20px;
-  cursor: pointer;
-  background: #f0f0f0;
-  border-radius: 20px;
-  border: 0px solid #010101;
-}
-input[type='range'].range::-moz-range-thumb {
-  /* box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.35), 0px 0px 0.5px rgba(13, 13, 13, 0.35); */
-  height: 20px;
-  width: 20px;
-  border-radius: 20px;
-  background: #2196f3;
-  cursor: pointer;
-}
-input[type='range'].range::-ms-track {
-  width: 100%;
-  height: 20px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-input[type='range'].range::-ms-fill-lower {
-  background: #ebebeb;
-  border-radius: 40px;
-}
-input[type='range'].range::-ms-fill-upper {
-  background: #f0f0f0;
-  border-radius: 40px;
-}
-input[type='range'].range::-ms-thumb {
-  /* box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.35), 0px 0px 0.5px rgba(13, 13, 13, 0.35); */
-  width: 20px;
-  border-radius: 20px;
-  background: #2196f3;
-  cursor: pointer;
-  height: 20px;
-}
-input[type='range'].range:focus::-ms-fill-lower {
-  background: #f0f0f0;
-}
-input[type='range'].range:focus::-ms-fill-upper {
-  background: #f5f5f5;
-}
-
 .container {
   width: 100%;
   max-width: 500px;
@@ -218,7 +141,7 @@ input[type='range'].range:focus::-ms-fill-upper {
   margin: 0;
   margin-bottom: 10px;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 }
 
