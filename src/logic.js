@@ -1,5 +1,5 @@
-import App from 'overmind-react';
-import { derive } from 'overmind';
+import createConnect from 'overmind-react';
+import App from 'overmind';
 import { RUN_MIN, HEART_MIN, METEO_MIN, RUN_MAX, METEO_MAX, HEART_MAX } from './config';
 
 // Mutations
@@ -10,7 +10,7 @@ const setValueMutation = (state, { key, value }) => {
 
 // Actions
 
-const setValue = action => action().mutate(setValueMutation);
+const setValue = ({ mutate }) => mutate(setValueMutation);
 
 // Utils
 
@@ -24,14 +24,14 @@ export const app = new App(
       run: RUN_MIN,
       meteo: METEO_MIN,
       heart: HEART_MIN,
-      water: derive(stateYolo => {
+      water: currentStateate => {
         return (
-          toPercent(stateYolo.run, RUN_MIN, RUN_MAX) *
-          toPercent(stateYolo.meteo, METEO_MIN, METEO_MAX) *
-          toPercent(stateYolo.heart, HEART_MIN, HEART_MAX) *
+          toPercent(currentStateate.run, RUN_MIN, RUN_MAX) *
+          toPercent(currentStateate.meteo, METEO_MIN, METEO_MAX) *
+          toPercent(currentStateate.heart, HEART_MIN, HEART_MAX) *
           5
         );
-      }),
+      },
     },
     actions: {
       setValue,
@@ -42,4 +42,4 @@ export const app = new App(
   }
 );
 
-export const connect = app.connect;
+export const connect = createConnect(app);
