@@ -1,22 +1,35 @@
-import React from 'react';
-import RcSlider from 'rc-slider/lib/Slider';
-import { connect } from '../logic';
+import React from "react";
+import RcSlider from "rc-slider/lib/Slider";
+import { useOvermind } from "../logic";
 
-const Slider = ({ app, icon, name, stateKey, unit = '', min = 0, max = 100 }) => {
+const Slider = ({
+  app,
+  icon,
+  name,
+  stateKey,
+  unit = "",
+  min = 0,
+  max = 100
+}) => {
+  const { state, actions } = useOvermind();
+
   return (
     <div className="slider-container">
-      <div className="slider-icon">{React.cloneElement(icon, { size: 40 })}</div>
+      <div className="slider-icon">
+        {React.cloneElement(icon, { size: 40 })}
+      </div>
       <div className="slider-content">
         <p className="slider-name">
-          {name + ': '} <span className="slider-value">{app.state[stateKey] + unit}</span>
+          {name + ": "}{" "}
+          <span className="slider-value">{state[stateKey] + unit}</span>
         </p>
         <div className="slider-range">
           <RcSlider
             min={min}
             max={max}
-            value={app.state[stateKey]}
+            value={state[stateKey]}
             onChange={v => {
-              app.actions.setValue({ key: stateKey, value: v });
+              actions.setValue({ key: stateKey, value: v });
             }}
           />
         </div>
@@ -25,4 +38,4 @@ const Slider = ({ app, icon, name, stateKey, unit = '', min = 0, max = 100 }) =>
   );
 };
 
-export default connect(Slider);
+export default Slider;

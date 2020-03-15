@@ -1,23 +1,39 @@
-import React from 'react';
-import Title from './Title';
-import Card from './Card';
-import Slider from './Slider';
-import CardSplitter from './CardSplitter';
-import WaterRecomandation from './WaterRecomandation';
-import Run from './icons/Run';
-import Heart from './icons/Heart';
-import Sun from './icons/Sun';
-import { connect } from '../logic';
-import { RUN_MIN, HEART_MIN, METEO_MIN, RUN_MAX, METEO_MAX, HEART_MAX } from '../config';
+import React from "react";
+import Title from "./Title";
+import Card from "./Card";
+import Slider from "./Slider";
+import CardSplitter from "./CardSplitter";
+import WaterRecomandation from "./WaterRecomandation";
+import Run from "./icons/Run";
+import Heart from "./icons/Heart";
+import Sun from "./icons/Sun";
+import { useOvermind } from "../logic";
+import {
+  RUN_MIN,
+  HEART_MIN,
+  METEO_MIN,
+  RUN_MAX,
+  METEO_MAX,
+  HEART_MAX
+} from "../config";
 
-const App = ({ app }) => {
+export const App = () => {
+  const { state } = useOvermind();
+
   return (
     <div className="container">
       <Card>
         <Title />
-        <WaterRecomandation waterValue={app.state.water} />
+        <WaterRecomandation waterValue={state.water} />
         <CardSplitter />
-        <Slider icon={<Run color="#F44336" />} name="Distance" unit="m" stateKey="run" min={RUN_MIN} max={RUN_MAX} />
+        <Slider
+          icon={<Run color="#F44336" />}
+          name="Distance"
+          unit="m"
+          stateKey="run"
+          min={RUN_MIN}
+          max={RUN_MAX}
+        />
         <Slider
           icon={<Sun color="#FF9800" />}
           name="Temperature"
@@ -38,5 +54,3 @@ const App = ({ app }) => {
     </div>
   );
 };
-
-export default connect(App);
